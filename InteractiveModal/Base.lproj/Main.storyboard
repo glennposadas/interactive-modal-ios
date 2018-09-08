@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InteractiveModal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-RR-IfQ">
+                                <rect key="frame" x="145.5" y="318.5" width="84" height="30"/>
+                                <state key="normal" title="Open Modal"/>
+                                <connections>
+                                    <segue destination="rQI-mj-qHg" kind="presentation" id="xwa-Uj-pJD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.55294117649999996" green="0.43921568630000002" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eiM-RR-IfQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aYc-4B-ufe"/>
+                            <constraint firstItem="eiM-RR-IfQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ubI-Yh-occ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="vou-6E-o1c">
+            <objects>
+                <viewController id="rQI-mj-qHg" customClass="ModalViewController" customModule="InteractiveModal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xme-P2-tuR"/>
+                        <viewControllerLayoutGuide type="bottom" id="wev-Pm-RQc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gCC-mq-zjB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6Q-Dg-Xs4">
+                                <rect key="frame" x="0.0" y="85" width="375" height="582"/>
+                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pS-11-m2j">
+                                <rect key="frame" x="307" y="120" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close:" destination="rQI-mj-qHg" eventType="touchUpInside" id="C4O-if-pVP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="w6Q-Dg-Xs4" firstAttribute="centerX" secondItem="gCC-mq-zjB" secondAttribute="centerX" id="7V1-qk-Izq"/>
+                            <constraint firstItem="w6Q-Dg-Xs4" firstAttribute="centerY" secondItem="gCC-mq-zjB" secondAttribute="centerY" constant="42.5" id="91a-qi-cqk"/>
+                            <constraint firstItem="8pS-11-m2j" firstAttribute="top" secondItem="xme-P2-tuR" secondAttribute="bottom" constant="100" id="LdM-vJ-Wad"/>
+                            <constraint firstItem="w6Q-Dg-Xs4" firstAttribute="height" secondItem="gCC-mq-zjB" secondAttribute="height" constant="-85" id="XTf-4b-frY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8pS-11-m2j" secondAttribute="trailing" constant="13" id="gtQ-hM-abb"/>
+                            <constraint firstItem="w6Q-Dg-Xs4" firstAttribute="width" secondItem="gCC-mq-zjB" secondAttribute="width" id="iPd-3a-jUb"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Lkn-sC-s6x" appends="YES" id="oRm-hH-iU9"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3W-Pk-rQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Lkn-sC-s6x">
+                    <connections>
+                        <action selector="handleGesture:" destination="rQI-mj-qHg" id="D43-fq-PFZ"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="885.60000000000002" y="159.67016491754123"/>
+        </scene>
+    </scenes>
+</document>
